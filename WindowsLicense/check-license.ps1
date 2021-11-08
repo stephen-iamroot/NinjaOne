@@ -10,4 +10,4 @@ $LicenseInfo = Get-CimInstance -Query $Query -ErrorAction Stop
                 6 {$LicenseStatus = 'ExtendedGrace'; Break}
             }
             $LicenseInfo | Where-Object -Property Name -like "Windows*" | Select-Object @{N = 'LicenseStatus'; E={$LicenseStatus}}
-            Ninja-Property-Set windowslicensestatus $LicenseStatus
+            Ninja-Property-Set windowslicensestatus $LicenseInfo
