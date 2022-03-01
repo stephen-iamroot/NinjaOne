@@ -1,3 +1,3 @@
 # NinjaOne
 
-A collection of scripts used within NinjaOne with custom fields.
+A collection of scripts used within NinjaOne, using custom fields where possible.
