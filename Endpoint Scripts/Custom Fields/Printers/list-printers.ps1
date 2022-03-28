@@ -1,2 +1,2 @@
-$printers = Get-Printer | Select-Object Name | ft -hidetableheaders | Out-String
+$printers = Get-Printer | Select-Object Name | Format-Table -hidetableheaders | Out-String
 Ninja-Property-Set installedPrinters $printers
