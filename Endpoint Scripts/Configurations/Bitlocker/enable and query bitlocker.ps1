@@ -9,3 +9,4 @@ Get-BitLockerVolume | where-object { $_.ProtectionStatus -eq "Off" -or $_.Encryp
        (Get-BitLockerVolume -MountPoint $_.MountPoint).KeyProtector | Where-Object {$_.KeyProtectorType -eq "RecoveryPassword"}
         
       }
+}
