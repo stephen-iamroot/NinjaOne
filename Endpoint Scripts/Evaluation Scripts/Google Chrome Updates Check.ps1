@@ -1,3 +1,5 @@
+<## Uncomment Set-ItemProperty to remediate the issue as part of the checks, else use them in a remediation script ##>
+
 if ((Get-ItemPropertyValue -Path "HKLM:\SOFTWARE\Policies\Google\Update" -Name "Update{8A69D345-D564-463C-AFF1-A69D9E530F96}") -eq '0'){
     Write-Host "Chrome Updates Disabled"
     #Set-ItemProperty "HKLM:\SOFTWARE\Policies\Google\Update" "Update{8A69D345-D564-463C-AFF1-A69D9E530F96}" 1
