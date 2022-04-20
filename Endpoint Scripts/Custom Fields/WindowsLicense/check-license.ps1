@@ -1,5 +1,4 @@
-$Query = "Select * from  SoftwareLicensingProduct Where PartialProductKey LIKE '%'"
-$LicenseInfo = Get-CimInstance -Query $Query -ErrorAction Stop 
+$LicenseInfo = Get-CimInstance SoftwareLicensingProduct -Filter "Name like 'Windows%'" | where { $_.PartialProductKey } | select Description, LicenseStatus 
             Switch ($LicenseInfo.LicenseStatus) {
                 0 {$LicenseStatus = 'Unlicensed'; Break}
                 1 {$LicenseStatus = 'Licensed'; Break}
