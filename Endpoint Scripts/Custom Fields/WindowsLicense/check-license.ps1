@@ -8,5 +8,4 @@ $LicenseInfo = Get-CimInstance SoftwareLicensingProduct -Filter "Name like 'Wind
                 5 {$LicenseStatus = 'Notification'; Break}
                 6 {$LicenseStatus = 'ExtendedGrace'; Break}
             }
-            $LicenseInfo | Where-Object -Property Name -like "Windows*" | Select-Object @{N = 'LicenseStatus'; E={$LicenseStatus}}
             Ninja-Property-Set windowslicensestatus $LicenseStatus
