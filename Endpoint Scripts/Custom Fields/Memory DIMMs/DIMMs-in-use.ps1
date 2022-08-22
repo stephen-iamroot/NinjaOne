@@ -9,4 +9,4 @@ $availabledimms = Get-CimInstance -Class "win32_PhysicalMemoryArray" | select -E
 Write-Output "Installed: $installeddimms / Max: $availabledimms"
 
 
-Get-CimInstance CIM_PhysicalMemory | Select-Object BankLabel, Manufacturer, Description , @{n = 'SizeGB'; e = { $_.Capacity / 1GB } }, MemoryType, @{n = 'MemoryDef'; e = { $MemHash[$_.MemoryType] } } | Format-Table
+Get-CimInstance CIM_PhysicalMemory | Select-Object BankLabel, Manufacturer, Description , @{n = 'SizeGB'; e = { $_.Capacity / 1GB } }, MemoryType, @{n = 'MemoryDef'; e = { $MemHash[$_.MemoryType] } }, SMBIOSMemoryType | Format-Table
